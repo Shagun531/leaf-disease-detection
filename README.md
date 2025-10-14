@@ -23,18 +23,19 @@ Crop-Disease-Detection/
 ├── requirements.txt # Python dependencies
 ├── training_results.png # Accuracy/Loss graph after training
 ├── app.py # Streamlit web based application
-├── predict.py # Prediction engine
+├── predict.py # Prediction engine for leaf images
 
 
 ---
 
-## ⚙️ Features
+**⚙️ Features**
 
-✅ Uses **MobileNetV2** pre-trained on ImageNet  
-✅ Trains only the last 60 layers (fine-tuning) for crop disease classification  
-✅ Includes dropout and L2 regularization to reduce overfitting  
-✅ Saves model and class names for later prediction use  
-✅ Visualizes training accuracy and loss graphs  
+✅ Uses MobileNetV2 pre-trained on ImageNet
+✅ Fine-tunes only the last 60 layers for crop disease classification
+✅ Includes Dropout and L2 regularization to reduce overfitting
+✅ Saves model and class names for later predictions
+✅ Visualizes training accuracy and loss
+✅ Web-based interface using Streamlit
 
 ---
 
@@ -97,7 +98,21 @@ Crop-Disease-Detection/
    ├──Tomato_Septoria_leaf_spot/
    ├──Tomato_Spider_mites_Two_spotted_spider_mite/
 
-🚀 Training the Model
+      💡 Optional: If dataset is too large, use Git LFS:
+            git lfs install
+            git lfs track "dataset/*"
+            git add .gitattributes
+            git add dataset/
+            git commit -m "Add dataset with Git LFS"
+            git push
+
+       For someone cloning the repo:
+            git clone <repo_url>
+            git lfs pull
+
+
+
+**🚀 Training the Model**
 Step 1 — Save Class Names
 ```bash
 python save_classes_only.py
@@ -120,8 +135,15 @@ Example output:
 ✅ Model saved to models/crop_disease_model.h5
 🎉 Training complete and plots saved!
 
-📊 Results
+🖼️ Running the Web App
+```bash
+streamlit run app.py
 
+Upload a leaf image
+View predicted disease and class probabilities
+See training performance in the expandable section
+
+📊 Results
 Model: MobileNetV2 (Fine-tuned)
 Epochs: 20
 Optimizer: Adam (lr=0.0001)
