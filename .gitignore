@@ -1,0 +1,49 @@
+# =========================
+# Python + TensorFlow + CNN Project
+# =========================
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Dataset and models (large files)
+dataset/
+datasets/
+models/
+*.h5
+*.keras
+*.ckpt
+*.tflite
+*.pb
+*.pth
+
+# Logs and checkpoints
+logs/
+*.log
+*.out
+*.txt
+*.csv
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE / Editor files
+.vscode/
+.vs/
+.idea/
+
+# Build and OS-specific files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Optional: ignore saved predictions or generated output
+output/
+results/
